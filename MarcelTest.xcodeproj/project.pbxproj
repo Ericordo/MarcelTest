@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		88A03A4D236973990027FCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A03A4C236973990027FCDE /* AppDelegate.swift */; };
-		88A03A4F236973990027FCDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A03A4E236973990027FCDE /* SceneDelegate.swift */; };
 		88A03A51236973990027FCDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A03A50236973990027FCDE /* HomeViewController.swift */; };
 		88A03A54236973990027FCDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A03A52236973990027FCDE /* Main.storyboard */; };
 		88A03A562369739A0027FCDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A03A552369739A0027FCDE /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 		1BC5C4AFFA433C1FA2624000 /* Pods-MarcelTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcelTest.debug.xcconfig"; path = "Target Support Files/Pods-MarcelTest/Pods-MarcelTest.debug.xcconfig"; sourceTree = "<group>"; };
 		88A03A49236973990027FCDE /* MarcelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarcelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A03A4C236973990027FCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		88A03A4E236973990027FCDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		88A03A50236973990027FCDE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		88A03A53236973990027FCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88A03A552369739A0027FCDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				88A03A4C236973990027FCDE /* AppDelegate.swift */,
-				88A03A4E236973990027FCDE /* SceneDelegate.swift */,
 				8878AA83236979F500D03CDB /* Model */,
 				8878AA8523697A0300D03CDB /* Controller */,
 				8878AA84236979FC00D03CDB /* View */,
@@ -232,7 +229,6 @@
 			files = (
 				88A03A51236973990027FCDE /* HomeViewController.swift in Sources */,
 				88A03A4D236973990027FCDE /* AppDelegate.swift in Sources */,
-				88A03A4F236973990027FCDE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.EricOrdonneau.MarcelTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -406,7 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.EricOrdonneau.MarcelTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
