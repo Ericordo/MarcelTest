@@ -56,4 +56,45 @@ class NetworkService {
         }
         dataTask.resume()
     }
+    
+    func getProposalsData(completion: @escaping (_ proposals: [Proposal]) -> Void) {
+          var proposals : [Proposal] = []
+          let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: OperationQueue.main)
+          let endpoint = "https://api.myjson.com/bins/1bjt0o"
+          let safeURLString = endpoint.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+          
+          guard let endpointURL = URL(string: safeURLString!) else {
+              print("The URL is invalid")
+              return
+          }
+          
+          var request = URLRequest(url: endpointURL)
+          request.httpMethod = "GET"
+          
+          let dataTask = session.dataTask(with: request) { (data, response, error) in
+              guard let dataResponse = data else {
+                  print("The payload is invalid")
+                  return
+              }
+           
+              do {
+                let jsonData = try JSONSerialization.jsonObject(with: dataResponse, options: .mutableContainers) as? [String : Any]
+                  print("jsonDecoded")
+                guard let dataProposals = jsonData?["proposals"] as? [[String : Any]] else { return }
+                dataProposals.forEach { proposal in
+                    guard let range = proposal["range"] as? String else { return }
+                    guard let price = proposal["price"] as? Double else { return }
+                    guard let waitingTime = proposal["waitingTime"] as? Int else { return }
+                    let newProposal = Proposal(range: range, price: price, waitingTime: waitingTime)
+                    proposals.append(newProposal)
+                }
+                  DispatchQueue.main.async {
+                      completion(proposals)
+                  }
+              } catch let error {
+                  print("JSON decoding failed", error)
+              }
+          }
+          dataTask.resume()
+      }
 }

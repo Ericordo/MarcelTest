@@ -17,10 +17,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var directionButton: DirectionButton!
     @IBOutlet weak var favoritesTableView: UITableView!
     
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
     
-    var favorites = [Favorite]()
-
+    var currentLocation : CLLocation?
+    var selectedLocation : Location?
+    
+    private var favorites = [Favorite]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         favoritesTableView.delegate = self
@@ -76,8 +79,14 @@ class HomeViewController: UIViewController {
     
     @IBAction func didTapDirection(_ sender: DirectionButton) {
         performSegue(withIdentifier: Identifiers.toSearch, sender: self)
-        
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Identifiers.toDrive {
+            let destinationVC = segue.destination as! DriveViewController
+            destinationVC.currentLocation = currentLocation
+            destinationVC.selectedLocation = selectedLocation
+        }
     }
     
     
@@ -96,6 +105,7 @@ extension HomeViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
+        currentLocation = location
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                               longitude: location.coordinate.longitude,
                                               zoom: MapConstants.zoomLevel)
@@ -148,8 +158,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: Identifiers.toDrive, sender: self)
+        guard let latitude = favorites[indexPath.row].lat else { return }
+        guard let longitude = favorites[indexPath.row].long else { return }
+        guard let address = favorites[indexPath.row].address else { return }
         
+        selectedLocation = Location(address: address, location: CLLocation(latitude: latitude, longitude: longitude))
+        
+        performSegue(withIdentifier: Identifiers.toDrive, sender: self)
     }
     
     

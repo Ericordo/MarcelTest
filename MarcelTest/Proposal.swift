@@ -1,5 +1,5 @@
 //
-//  Favorite.swift
+//  Proposal.swift
 //  MarcelTest
 //
 //  Created by Eric Ordonneau on 30/10/2019.
@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct Favorite : Codable {
-    var type : String?
-    var address : String?
-    var lat : Double?
-    var long : Double?
+struct Proposal : Codable {
+    var range : String?
+    var price : Double?
+    var waitingTime : Int?
 }

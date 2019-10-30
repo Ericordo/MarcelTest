@@ -11,23 +11,18 @@ import GoogleMaps
 import GooglePlaces
 
 class SearchViewController: UIViewController {
-
+    
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var resultsTableView: UITableView!
     
-    var placesClient: GMSPlacesClient!
-    
-    var searchResults = [SearchResult]()
-    
-    let token = GMSAutocompleteSessionToken.init()
+    private var placesClient: GMSPlacesClient!
+    private var searchResults = [SearchResult]()
+    private let token = GMSAutocompleteSessionToken.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
         placesClient = GMSPlacesClient.shared()
-        
-        
-
     }
     
     func setUpUI() {
@@ -43,6 +38,7 @@ class SearchViewController: UIViewController {
         searchTableView.layer.shadowRadius = 2
         searchTableView.layer.shadowOpacity = 1.0
         searchTableView.layer.masksToBounds = false
+        searchTableView.isScrollEnabled = false
         let nibSearch = UINib(nibName: "SearchTableViewCell", bundle: nil)
         searchTableView.register(nibSearch, forCellReuseIdentifier: Identifiers.searchCellIdentifier)
         let nibUser = UINib(nibName: "UserLocationTableViewCell", bundle: nil)
@@ -52,12 +48,7 @@ class SearchViewController: UIViewController {
         view.bringSubviewToFront(searchTableView)
     }
     
-    
-
-   
-
 }
-
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,13 +81,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             if searchResults.count > 0 {
                 resultCell.addressLabel.attributedText = searchResults[indexPath.row].address
                 resultCell.cityLabel.attributedText = searchResults[indexPath.row].city
-     
             }
- 
-            }
-            
-            return resultCell
-        
+        }
+        return resultCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -107,9 +94,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    
-    
-    
 }
 
 extension SearchViewController: UITextFieldDelegate {
@@ -119,7 +103,7 @@ extension SearchViewController: UITextFieldDelegate {
         autoComplete(query: text)
     }
     
-    func autoComplete(query: String) {
+    private func autoComplete(query: String) {
         let filter = GMSAutocompleteFilter()
         filter.type = .address
         

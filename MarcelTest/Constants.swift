@@ -17,6 +17,7 @@ enum MapConstants {
 enum Colors {
     static let favoriteCellColor = UIColor(red: 251/256, green: 251/256, blue: 250/256, alpha: 0.9)
     static let resultsTVColor = UIColor(red: 251/256, green: 251/256, blue: 250/256, alpha: 1)
+    static let turquoise = UIColor(red: 0/256, green: 214/256, blue: 194/256, alpha: 1)
 }
 
 enum Identifiers {
@@ -24,6 +25,7 @@ enum Identifiers {
     static let searchCellIdentifier = "SearchCell"
     static let resultCellIdentifier = "ResultCell"
     static let userLocationCellIdentifier = "UserLocationCell"
+    static let proposalCellIdentifier = "ProposalCell"
     static let toSearch = "toSearch"
     static let toDrive = "toDrive"
 }

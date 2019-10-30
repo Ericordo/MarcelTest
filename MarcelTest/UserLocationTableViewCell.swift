@@ -10,6 +10,8 @@ import UIKit
 
 class UserLocationTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var infoImage: UIImageView!
+    @IBOutlet weak var infoLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCell()
@@ -23,6 +25,7 @@ class UserLocationTableViewCell: UITableViewCell {
     
     private func setUpCell() {
         self.selectionStyle = .none
+        self.infoLabel.textColor = Colors.turquoise
         
     }
     

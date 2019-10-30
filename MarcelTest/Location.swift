@@ -1,5 +1,5 @@
 //
-//  Favorite.swift
+//  Location.swift
 //  MarcelTest
 //
 //  Created by Eric Ordonneau on 30/10/2019.
@@ -7,10 +7,9 @@
 //
 
 import Foundation
+import CoreLocation
 
-struct Favorite : Codable {
-    var type : String?
+struct Location {
     var address : String?
-    var lat : Double?
-    var long : Double?
+    var location : CLLocation?
 }
