@@ -3,27 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		88A03A4D236973990027FCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A03A4C236973990027FCDE /* AppDelegate.swift */; };
 		88A03A4F236973990027FCDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A03A4E236973990027FCDE /* SceneDelegate.swift */; };
-		88A03A51236973990027FCDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A03A50236973990027FCDE /* ViewController.swift */; };
+		88A03A51236973990027FCDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A03A50236973990027FCDE /* HomeViewController.swift */; };
 		88A03A54236973990027FCDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A03A52236973990027FCDE /* Main.storyboard */; };
 		88A03A562369739A0027FCDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A03A552369739A0027FCDE /* Assets.xcassets */; };
 		88A03A592369739A0027FCDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A03A572369739A0027FCDE /* LaunchScreen.storyboard */; };
+		AA750735D67581E53B075875 /* Pods_MarcelTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F7E163BA4FE355AD5488D6 /* Pods_MarcelTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D27F765B103183FDC778173 /* Pods-MarcelTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcelTest.release.xcconfig"; path = "Target Support Files/Pods-MarcelTest/Pods-MarcelTest.release.xcconfig"; sourceTree = "<group>"; };
+		1BC5C4AFFA433C1FA2624000 /* Pods-MarcelTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcelTest.debug.xcconfig"; path = "Target Support Files/Pods-MarcelTest/Pods-MarcelTest.debug.xcconfig"; sourceTree = "<group>"; };
 		88A03A49236973990027FCDE /* MarcelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarcelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A03A4C236973990027FCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A03A4E236973990027FCDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		88A03A50236973990027FCDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		88A03A50236973990027FCDE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		88A03A53236973990027FCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88A03A552369739A0027FCDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88A03A582369739A0027FCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88A03A5A2369739A0027FCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92F7E163BA4FE355AD5488D6 /* Pods_MarcelTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcelTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA750735D67581E53B075875 /* Pods_MarcelTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5510213AC1C5E79E8C1C7F6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BC5C4AFFA433C1FA2624000 /* Pods-MarcelTest.debug.xcconfig */,
+				0D27F765B103183FDC778173 /* Pods-MarcelTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7B9DF4575346BCB9FD880063 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92F7E163BA4FE355AD5488D6 /* Pods_MarcelTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8878AA83236979F500D03CDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8878AA84236979FC00D03CDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88A03A52236973990027FCDE /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8878AA8523697A0300D03CDB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				88A03A50236973990027FCDE /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		88A03A40236973990027FCDE = {
 			isa = PBXGroup;
 			children = (
 				88A03A4B236973990027FCDE /* MarcelTest */,
 				88A03A4A236973990027FCDE /* Products */,
+				5510213AC1C5E79E8C1C7F6C /* Pods */,
+				7B9DF4575346BCB9FD880063 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +105,9 @@
 			children = (
 				88A03A4C236973990027FCDE /* AppDelegate.swift */,
 				88A03A4E236973990027FCDE /* SceneDelegate.swift */,
-				88A03A50236973990027FCDE /* ViewController.swift */,
-				88A03A52236973990027FCDE /* Main.storyboard */,
+				8878AA83236979F500D03CDB /* Model */,
+				8878AA8523697A0300D03CDB /* Controller */,
+				8878AA84236979FC00D03CDB /* View */,
 				88A03A552369739A0027FCDE /* Assets.xcassets */,
 				88A03A572369739A0027FCDE /* LaunchScreen.storyboard */,
 				88A03A5A2369739A0027FCDE /* Info.plist */,
@@ -74,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88A03A5D2369739A0027FCDE /* Build configuration list for PBXNativeTarget "MarcelTest" */;
 			buildPhases = (
+				0689ADC8B35FE86FC2D33874 /* [CP] Check Pods Manifest.lock */,
 				88A03A45236973990027FCDE /* Sources */,
 				88A03A46236973990027FCDE /* Frameworks */,
 				88A03A47236973990027FCDE /* Resources */,
+				C0F8FCB7D4BC557A8A0540B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,12 +183,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0689ADC8B35FE86FC2D33874 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarcelTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0F8FCB7D4BC557A8A0540B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcelTest/Pods-MarcelTest-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcelTest/Pods-MarcelTest-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarcelTest/Pods-MarcelTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		88A03A45236973990027FCDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88A03A51236973990027FCDE /* ViewController.swift in Sources */,
+				88A03A51236973990027FCDE /* HomeViewController.swift in Sources */,
 				88A03A4D236973990027FCDE /* AppDelegate.swift in Sources */,
 				88A03A4F236973990027FCDE /* SceneDelegate.swift in Sources */,
 			);
@@ -216,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,6 +374,7 @@
 		};
 		88A03A5E2369739A0027FCDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BC5C4AFFA433C1FA2624000 /* Pods-MarcelTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +393,7 @@
 		};
 		88A03A5F2369739A0027FCDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D27F765B103183FDC778173 /* Pods-MarcelTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
