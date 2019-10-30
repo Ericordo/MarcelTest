@@ -13,6 +13,7 @@
 		8808B21E2369938A00D68BC2 /* FavoritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8808B21C2369938A00D68BC2 /* FavoritesTableViewCell.xib */; };
 		8808B22023699A5E00D68BC2 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808B21F23699A5D00D68BC2 /* Favorite.swift */; };
 		8808B22223699A9A00D68BC2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808B22123699A9A00D68BC2 /* NetworkService.swift */; };
+		8808B2242369A68800D68BC2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808B2232369A68800D68BC2 /* Extensions.swift */; };
 		88A03A4D236973990027FCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A03A4C236973990027FCDE /* AppDelegate.swift */; };
 		88A03A51236973990027FCDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A03A50236973990027FCDE /* HomeViewController.swift */; };
 		88A03A54236973990027FCDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A03A52236973990027FCDE /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		8808B21C2369938A00D68BC2 /* FavoritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesTableViewCell.xib; sourceTree = "<group>"; };
 		8808B21F23699A5D00D68BC2 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		8808B22123699A9A00D68BC2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		8808B2232369A68800D68BC2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		88A03A49236973990027FCDE /* MarcelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarcelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A03A4C236973990027FCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A03A50236973990027FCDE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				8808B219236990F100D68BC2 /* Constants.swift */,
 				8808B21F23699A5D00D68BC2 /* Favorite.swift */,
 				8808B22123699A9A00D68BC2 /* NetworkService.swift */,
+				8808B2232369A68800D68BC2 /* Extensions.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				8808B21D2369938A00D68BC2 /* FavoritesTableViewCell.swift in Sources */,
 				8808B21823698B3D00D68BC2 /* DirectionButton.swift in Sources */,
 				88A03A51236973990027FCDE /* HomeViewController.swift in Sources */,
+				8808B2242369A68800D68BC2 /* Extensions.swift in Sources */,
 				8808B22023699A5E00D68BC2 /* Favorite.swift in Sources */,
 				88A03A4D236973990027FCDE /* AppDelegate.swift in Sources */,
 				8808B21A236990F100D68BC2 /* Constants.swift in Sources */,

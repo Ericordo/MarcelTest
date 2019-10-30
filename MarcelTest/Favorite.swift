@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Favorite {
-    let type : String
-    let address : String
-    let lat : Float
-    let long : Float
+struct Favorite : Codable {
+    var type : String?
+    var address : String?
+    var lat : Float?
+    var long : Float?
 }

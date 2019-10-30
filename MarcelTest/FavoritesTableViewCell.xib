@@ -24,11 +24,11 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9w-AM-une">
-                        <rect key="frame" x="59" y="5" width="251" height="22"/>
+                        <rect key="frame" x="59" y="8" width="251" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="QR9-dQ-NTF"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -37,8 +37,8 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="Sqo-ta-vyJ"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <color key="textColor" red="0.75813732014467872" green="0.75447482101354502" blue="0.76179981927581242" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -51,7 +51,7 @@
                     <constraint firstItem="wyv-t3-eN9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bGB-BZ-102"/>
                     <constraint firstAttribute="trailing" secondItem="C9w-AM-une" secondAttribute="trailing" constant="10" id="iLa-SR-nQn"/>
                     <constraint firstItem="wyv-t3-eN9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="w95-WM-T9d"/>
-                    <constraint firstItem="C9w-AM-une" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="wJB-iB-qUJ"/>
+                    <constraint firstItem="C9w-AM-une" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="wJB-iB-qUJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

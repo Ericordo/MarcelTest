@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V4o-Ii-dnu">
-                                <rect key="frame" x="20" y="371" width="335" height="137"/>
+                                <rect key="frame" x="20" y="383" width="335" height="130"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="137" id="2go-Nj-ixT"/>
+                                    <constraint firstAttribute="height" constant="130" id="2go-Nj-ixT"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="GVv-ML-vld" customClass="FavoritesTableViewCell" customModule="MarcelTest" customModuleProvider="target">
@@ -75,7 +75,7 @@
                             <constraint firstItem="V4o-Ii-dnu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ENb-4v-Y2u"/>
                             <constraint firstItem="bHs-kf-Fij" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Nb0-zN-zIo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V4o-Ii-dnu" secondAttribute="trailing" constant="20" id="NrJ-qK-x7i"/>
-                            <constraint firstItem="V4o-Ii-dnu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="283" id="PWH-cu-cIA"/>
+                            <constraint firstItem="V4o-Ii-dnu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="295" id="PWH-cu-cIA"/>
                             <constraint firstItem="4kD-I8-TvT" firstAttribute="top" secondItem="aMr-6h-akm" secondAttribute="bottom" id="gn5-Ft-C60"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4kD-I8-TvT" secondAttribute="trailing" id="iux-Nn-VRb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aMr-6h-akm" secondAttribute="trailing" id="ouJ-yF-v5a"/>

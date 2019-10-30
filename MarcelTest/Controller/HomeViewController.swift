@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
+    var favorites = [Favorite]()
 
     
     
@@ -30,6 +31,10 @@ class HomeViewController: UIViewController {
         setUpMap()
         setUpUI()
         
+        NetworkService.shared.getFavoritesData { parsedFavorites in
+            self.favorites = parsedFavorites.reversed()
+            self.favoritesTableView.reloadData()
+        }
         
     }
     
@@ -91,9 +96,6 @@ extension HomeViewController: CLLocationManagerDelegate {
         let marker = GMSMarker(position: location.coordinate)
         marker.icon = UIImage(named: "Pickup Marker")
         marker.map = mapView
-        
-        
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -121,16 +123,23 @@ extension HomeViewController: CLLocationManagerDelegate {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return favorites.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = favoritesTableView.dequeueReusableCell(withIdentifier: Identifiers.favoriteCellIdentifier, for: indexPath) as! FavoritesTableViewCell
         
+        cell.favoriteLabel.text = favorites[indexPath.row].type?.capitalizingFirstLetter() ?? ""
+        cell.addressLabel.text = favorites[indexPath.row].address ?? ""
+        if let type = favorites[indexPath.row].type {
+            cell.iconImageView.image = UIImage(named: type)
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
