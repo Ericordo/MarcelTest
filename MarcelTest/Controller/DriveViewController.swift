@@ -14,6 +14,8 @@ class DriveViewController: UIViewController {
     @IBOutlet weak var itineraryTableView: UITableView!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var waitingTimeLabel: UILabel!
+    @IBOutlet weak var confirmButton: UIButton!
+    
     @IBOutlet weak var proposalsCollectionView: UICollectionView!
     
     var currentLocation : CLLocation?
@@ -28,6 +30,7 @@ class DriveViewController: UIViewController {
         
         NetworkService.shared.getProposalsData { proposals in
             self.proposals = proposals
+            self.proposalsCollectionView.reloadData()
         }
         
     }
@@ -67,6 +70,17 @@ class DriveViewController: UIViewController {
         itineraryTableView.register(nibUser, forCellReuseIdentifier: Identifiers.userLocationCellIdentifier)
         view.bringSubviewToFront(itineraryTableView)
         
+        proposalsCollectionView.delegate = self
+        proposalsCollectionView.dataSource = self
+        proposalsCollectionView.isScrollEnabled = false
+        let nibProposal = UINib(nibName: "ProposalCollectionViewCell", bundle: nil)
+        proposalsCollectionView.register(nibProposal, forCellWithReuseIdentifier: Identifiers.proposalCellIdentifier)
+        
+        confirmButton.backgroundColor = Colors.darkBlue
+        confirmButton.layer.cornerRadius = 10
+        
+        let layout = UICollectionViewFlowLayout()
+        proposalsCollectionView.collectionViewLayout = layout
     }
     
     
@@ -100,5 +114,51 @@ extension DriveViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
+}
+
+extension DriveViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = proposalsCollectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.proposalCellIdentifier, for: indexPath) as! ProposalCollectionViewCell
+        
+        let range = proposals?[indexPath.row].range
+        cell.rangeLabel.text = range?.capitalizingFirstLetter()
+        let price = Int(proposals?[indexPath.row].price ?? 0)
+        cell.priceLabel.text = String(price) + " €"
+     
+        if range == "eco" {
+            cell.leafImageView.image = UIImage(named: "Leaf")
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let waitingTime = proposals![indexPath.row].waitingTime else { return }
+        waitingTimeLabel.text = "    Temps d'attente estimé à " + String(waitingTime) + " minutes."
+    }
+    
+    
+    
+    
+    
+}
+
+extension DriveViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.width/3, height: 170)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     
 }

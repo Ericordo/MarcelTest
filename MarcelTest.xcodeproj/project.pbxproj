@@ -97,6 +97,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8808B23F2369F2B200D68BC2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8808B21B2369938A00D68BC2 /* FavoritesTableViewCell.swift */,
+				8808B2292369B01F00D68BC2 /* SearchTableViewCell.swift */,
+				8808B22D2369B40D00D68BC2 /* UserLocationTableViewCell.swift */,
+				8808B2312369B42300D68BC2 /* ResultTableViewCell.swift */,
+				8808B23B2369F21C00D68BC2 /* ProposalCollectionViewCell.swift */,
+				8808B2402369F2C100D68BC2 /* Xibs */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		8808B2402369F2C100D68BC2 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				8808B21C2369938A00D68BC2 /* FavoritesTableViewCell.xib */,
+				8808B22A2369B01F00D68BC2 /* SearchTableViewCell.xib */,
+				8808B22E2369B40D00D68BC2 /* UserLocationTableViewCell.xib */,
+				8808B2322369B42300D68BC2 /* ResultTableViewCell.xib */,
+				8808B23C2369F21C00D68BC2 /* ProposalCollectionViewCell.xib */,
+			);
+			name = Xibs;
+			sourceTree = "<group>";
+		};
 		8878AA83236979F500D03CDB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,18 +139,9 @@
 		8878AA84236979FC00D03CDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8808B23F2369F2B200D68BC2 /* Cells */,
 				88A03A52236973990027FCDE /* Main.storyboard */,
 				8808B21723698B3D00D68BC2 /* DirectionButton.swift */,
-				8808B21B2369938A00D68BC2 /* FavoritesTableViewCell.swift */,
-				8808B21C2369938A00D68BC2 /* FavoritesTableViewCell.xib */,
-				8808B2292369B01F00D68BC2 /* SearchTableViewCell.swift */,
-				8808B22A2369B01F00D68BC2 /* SearchTableViewCell.xib */,
-				8808B22D2369B40D00D68BC2 /* UserLocationTableViewCell.swift */,
-				8808B22E2369B40D00D68BC2 /* UserLocationTableViewCell.xib */,
-				8808B2312369B42300D68BC2 /* ResultTableViewCell.swift */,
-				8808B2322369B42300D68BC2 /* ResultTableViewCell.xib */,
-				8808B23B2369F21C00D68BC2 /* ProposalCollectionViewCell.swift */,
-				8808B23C2369F21C00D68BC2 /* ProposalCollectionViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
