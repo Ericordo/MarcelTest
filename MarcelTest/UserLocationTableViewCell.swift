@@ -1,5 +1,5 @@
 //
-//  FavoritesTableViewCell.swift
+//  UserLocationTableViewCell.swift
 //  MarcelTest
 //
 //  Created by Eric Ordonneau on 30/10/2019.
@@ -8,13 +8,8 @@
 
 import UIKit
 
-class FavoritesTableViewCell: UITableViewCell {
+class UserLocationTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var favoriteLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCell()
@@ -23,11 +18,11 @@ class FavoritesTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        
+        // Configure the view for the selected state
     }
     
-   private func setUpCell() {
-        self.backgroundColor = Colors.favoriteCellColor
+    private func setUpCell() {
+        self.selectionStyle = .none
         
     }
     

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" rowHeight="60" id="KGk-i7-Jjw" customClass="ResultTableViewCell" customModule="MarcelTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marker" translatesAutoresizingMaskIntoConstraints="NO" id="ARw-fg-U4i">
+                        <rect key="frame" x="16" y="18" width="27" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="27" id="vsC-ap-1Sb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sF-cU-kQr">
+                        <rect key="frame" x="59" y="8" width="251" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="a2P-qB-Adq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RG3-4w-WPD">
+                        <rect key="frame" x="59" y="33" width="251" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="gGp-yi-igi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <color key="textColor" red="0.75813732010000001" green="0.75447482099999996" blue="0.76179981929999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2sF-cU-kQr" secondAttribute="trailing" constant="10" id="4wC-2E-caW"/>
+                    <constraint firstAttribute="trailing" secondItem="RG3-4w-WPD" secondAttribute="trailing" constant="10" id="6g0-1P-34i"/>
+                    <constraint firstItem="RG3-4w-WPD" firstAttribute="leading" secondItem="ARw-fg-U4i" secondAttribute="trailing" constant="16" id="C2E-70-RQq"/>
+                    <constraint firstItem="2sF-cU-kQr" firstAttribute="leading" secondItem="ARw-fg-U4i" secondAttribute="trailing" constant="16" id="Jpi-qr-mfe"/>
+                    <constraint firstItem="ARw-fg-U4i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="OT1-tk-pbh"/>
+                    <constraint firstAttribute="bottom" secondItem="RG3-4w-WPD" secondAttribute="bottom" constant="5" id="Sco-Hm-Fcw"/>
+                    <constraint firstItem="2sF-cU-kQr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="lgK-75-QV6"/>
+                    <constraint firstItem="ARw-fg-U4i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="tAA-Zx-XP1"/>
+                    <constraint firstAttribute="bottom" secondItem="ARw-fg-U4i" secondAttribute="bottom" constant="19" id="yzg-15-vcP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="131.8840579710145" y="137.27678571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Marker" width="16" height="25"/>
+    </resources>
+</document>

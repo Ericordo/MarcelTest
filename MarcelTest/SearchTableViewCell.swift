@@ -1,5 +1,5 @@
 //
-//  FavoritesTableViewCell.swift
+//  SearchTableViewCell.swift
 //  MarcelTest
 //
 //  Created by Eric Ordonneau on 30/10/2019.
@@ -8,26 +8,24 @@
 
 import UIKit
 
-class FavoritesTableViewCell: UITableViewCell {
+class SearchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var favoriteLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    
+    @IBOutlet weak var textField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCell()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        
+
     }
     
-   private func setUpCell() {
-        self.backgroundColor = Colors.favoriteCellColor
+    func setUpCell() {
+        self.selectionStyle = .none
         
     }
     

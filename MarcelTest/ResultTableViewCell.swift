@@ -1,5 +1,5 @@
 //
-//  FavoritesTableViewCell.swift
+//  ResultTableViewCell.swift
 //  MarcelTest
 //
 //  Created by Eric Ordonneau on 30/10/2019.
@@ -8,27 +8,21 @@
 
 import UIKit
 
-class FavoritesTableViewCell: UITableViewCell {
+class ResultTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var favoriteLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpCell()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        
+        // Configure the view for the selected state
     }
     
-   private func setUpCell() {
-        self.backgroundColor = Colors.favoriteCellColor
-        
+    func setUpCell() {
+        self.backgroundColor = Colors.resultsTVColor
     }
     
 }

@@ -21,8 +21,6 @@ class HomeViewController: UIViewController {
     
     var favorites = [Favorite]()
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         favoritesTableView.delegate = self
@@ -36,6 +34,14 @@ class HomeViewController: UIViewController {
             self.favoritesTableView.reloadData()
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
     
     private func setUpLocationManager() {
@@ -69,6 +75,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func didTapDirection(_ sender: DirectionButton) {
+        performSegue(withIdentifier: Identifiers.toSearch, sender: self)
         
         
     }
@@ -122,6 +129,7 @@ extension HomeViewController: CLLocationManagerDelegate {
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favorites.count
     }
@@ -140,6 +148,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: Identifiers.toDrive, sender: self)
         
     }
     
