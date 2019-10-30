@@ -15,13 +15,16 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var resultsTableView: UITableView!
     
-    var searchResults = [String]()
+    var placesClient: GMSPlacesClient!
+    
+    var searchResults = [SearchResult]()
+    
+    let token = GMSAutocompleteSessionToken.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-        
-        let token = GMSAutocompleteSessionToken.init()
+        placesClient = GMSPlacesClient.shared()
         
         
 
@@ -84,13 +87,23 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                 return userCell
             }
         } else {
+            if searchResults.count > 0 {
+                resultCell.addressLabel.attributedText = searchResults[indexPath.row].address
+                resultCell.cityLabel.attributedText = searchResults[indexPath.row].city
+     
+            }
+ 
+            }
+            
             return resultCell
-        }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        if tableView == resultsTableView {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
         
     }
     
@@ -100,16 +113,31 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SearchViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-    
-        
-        resultsTableView.reloadData()
-    }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        autoComplete(query: text)
+    }
+    
+    func autoComplete(query: String) {
+        let filter = GMSAutocompleteFilter()
+        filter.type = .address
         
-        
-        
+        placesClient.findAutocompletePredictions(fromQuery: query, bounds: nil, boundsMode: GMSAutocompleteBoundsMode.bias, filter: filter, sessionToken: token) { (results, error) in
+            if let error = error {
+                print("Autocomplete error", error)
+                return
+            }
+            if let results = results {
+                self.searchResults.removeAll()
+                results.forEach { result in
+                    var searchResult = SearchResult()
+                    searchResult.address = result.attributedPrimaryText
+                    searchResult.city = result.attributedSecondaryText
+                    self.searchResults.append(searchResult)
+                }
+            }
+        }
         resultsTableView.reloadData()
     }
     

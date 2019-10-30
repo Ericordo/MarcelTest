@@ -14,7 +14,6 @@ enum MapConstants {
     static let defaultLocation = CLLocation(latitude: 48.85, longitude: 2.34)
 }
 
-
 enum Colors {
     static let favoriteCellColor = UIColor(red: 251/256, green: 251/256, blue: 250/256, alpha: 0.9)
     static let resultsTVColor = UIColor(red: 251/256, green: 251/256, blue: 250/256, alpha: 1)
