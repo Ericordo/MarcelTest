@@ -19,11 +19,7 @@ class DirectionButton: UIButton {
         super.init(coder: aDecoder)
         setUpButton()
     }
-    
-    
-    
-    
-    
+
     private func setUpButton() {
         self.backgroundColor = .white
         self.layer.cornerRadius = 12
@@ -34,8 +30,5 @@ class DirectionButton: UIButton {
         self.layer.shadowRadius = 2
         self.layer.shadowOpacity = 1.0
         self.layer.masksToBounds = false
-        
-        
     }
-
 }

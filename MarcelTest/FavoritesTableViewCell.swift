@@ -14,21 +14,12 @@ class FavoritesTableViewCell: UITableViewCell {
     @IBOutlet private weak var favoriteLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCell()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        
-    }
     
    private func setUpCell() {
         self.backgroundColor = Colors.favoriteCellColor
-        
     }
-    
 }

@@ -15,18 +15,9 @@ class SearchTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCell()
-
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-
     }
     
-    func setUpCell() {
+    private func setUpCell() {
         self.selectionStyle = .none
-        
     }
-    
 }

@@ -9,8 +9,6 @@
 import UIKit
 import GoogleMaps
 
-
-
 class HomeViewController: UIViewController {
     
     @IBOutlet private weak var mapView: GMSMapView!
@@ -36,7 +34,6 @@ class HomeViewController: UIViewController {
             self.favorites = parsedFavorites.reversed()
             self.favoritesTableView.reloadData()
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,8 +72,7 @@ class HomeViewController: UIViewController {
         view.bringSubviewToFront(favoritesTableView)
         view.bringSubviewToFront(directionButton)
     }
-    
-    
+
     @IBAction func didTapDirection(_ sender: DirectionButton) {
         performSegue(withIdentifier: Identifiers.toSearch, sender: self)
     }
@@ -88,18 +84,9 @@ class HomeViewController: UIViewController {
             destinationVC.selectedLocation = selectedLocation
         }
     }
-    
-    
-    
-    
-    
 }
 
-extension HomeViewController: GMSMapViewDelegate {
-    
-    
-}
-
+extension HomeViewController: GMSMapViewDelegate {}
 
 extension HomeViewController: CLLocationManagerDelegate {
     
@@ -135,7 +122,6 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.stopUpdatingLocation()
     }
-    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -152,7 +138,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if let type = favorites[indexPath.row].type {
             cell.iconImageView.image = UIImage(named: type)
         }
-        
         return cell
     }
     
@@ -165,10 +150,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         selectedLocation = Location(address: address, location: CLLocation(latitude: latitude, longitude: longitude))
         
         performSegue(withIdentifier: Identifiers.toDrive, sender: self)
-    }
-    
-    
-    
-    
-    
+    }   
 }

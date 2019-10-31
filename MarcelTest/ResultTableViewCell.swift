@@ -12,19 +12,13 @@ class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var cityLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        setUpCell()
     }
     
-    func setUpCell() {
+    private func setUpCell() {
         self.backgroundColor = Colors.resultsTVColor
     }
-    
 }

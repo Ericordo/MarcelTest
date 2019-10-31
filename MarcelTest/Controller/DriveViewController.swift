@@ -15,12 +15,10 @@ class DriveViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var waitingTimeLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
-    
     @IBOutlet weak var proposalsCollectionView: UICollectionView!
     
     private var currentLocation : CLLocation?
     private var selectedLocation : Location?
-    
     private var proposals : [Proposal]?
     
     override func viewDidLoad() {
@@ -32,7 +30,6 @@ class DriveViewController: UIViewController {
             self.proposals = proposals
             self.proposalsCollectionView.reloadData()
         }
-        
     }
     
     private func setUpMap() {
@@ -54,7 +51,6 @@ class DriveViewController: UIViewController {
         markerTarget.icon = UIImage(named: "DropOff Marker")
         markerTarget.map = mapView
     }
-    
     
     private func setUpUI() {
         itineraryTableView.delegate = self
@@ -82,14 +78,9 @@ class DriveViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         proposalsCollectionView.collectionViewLayout = layout
     }
-    
-    
-    
 }
 
-extension DriveViewController: GMSMapViewDelegate {
-    
-}
+extension DriveViewController: GMSMapViewDelegate {}
 
 extension DriveViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -113,11 +104,10 @@ extension DriveViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
-    
 }
 
 extension DriveViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
@@ -140,11 +130,6 @@ extension DriveViewController: UICollectionViewDelegate, UICollectionViewDataSou
         guard let waitingTime = proposals![indexPath.row].waitingTime else { return }
         waitingTimeLabel.text = "    Temps d'attente estimé à " + String(waitingTime) + " minutes."
     }
-    
-    
-    
-    
-    
 }
 
 extension DriveViewController: UICollectionViewDelegateFlowLayout {
@@ -160,5 +145,4 @@ extension DriveViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
 }

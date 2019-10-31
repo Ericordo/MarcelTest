@@ -58,7 +58,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return searchResults.count
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,9 +90,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == resultsTableView {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        
     }
-    
 }
 
 extension SearchViewController: UITextFieldDelegate {
@@ -124,7 +121,4 @@ extension SearchViewController: UITextFieldDelegate {
         }
         resultsTableView.reloadData()
     }
-    
-    
-    
 }
