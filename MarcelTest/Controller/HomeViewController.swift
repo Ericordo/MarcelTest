@@ -13,14 +13,14 @@ import GoogleMaps
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var directionButton: DirectionButton!
-    @IBOutlet weak var favoritesTableView: UITableView!
+    @IBOutlet private weak var mapView: GMSMapView!
+    @IBOutlet private weak var directionButton: DirectionButton!
+    @IBOutlet private weak var favoritesTableView: UITableView!
     
     private let locationManager = CLLocationManager()
     
-    var currentLocation : CLLocation?
-    var selectedLocation : Location?
+    private var currentLocation : CLLocation?
+    private var selectedLocation : Location?
     
     private var favorites = [Favorite]()
     

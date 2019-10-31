@@ -10,8 +10,8 @@ import UIKit
 
 class UserLocationTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var infoImage: UIImageView!
-    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet private weak var infoImage: UIImageView!
+    @IBOutlet private weak var infoLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCell()

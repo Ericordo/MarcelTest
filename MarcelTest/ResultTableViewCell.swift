@@ -10,8 +10,8 @@ import UIKit
 
 class ResultTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var cityLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

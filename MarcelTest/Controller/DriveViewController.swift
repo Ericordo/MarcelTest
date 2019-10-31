@@ -18,8 +18,8 @@ class DriveViewController: UIViewController {
     
     @IBOutlet weak var proposalsCollectionView: UICollectionView!
     
-    var currentLocation : CLLocation?
-    var selectedLocation : Location?
+    private var currentLocation : CLLocation?
+    private var selectedLocation : Location?
     
     private var proposals : [Proposal]?
     

@@ -10,12 +10,12 @@ import UIKit
 
 class ProposalCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var rangeLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var rangeLabel: UILabel!
 
-    @IBOutlet weak var rangeImageView: UIImageView!
-    @IBOutlet weak var leafImageView: UIImageView!
-    @IBOutlet weak var imgBackgroundView: UIView!
+    @IBOutlet private weak var rangeImageView: UIImageView!
+    @IBOutlet private weak var leafImageView: UIImageView!
+    @IBOutlet private weak var imgBackgroundView: UIView!
     
     
 

@@ -12,8 +12,8 @@ import GooglePlaces
 
 class SearchViewController: UIViewController {
     
-    @IBOutlet weak var searchTableView: UITableView!
-    @IBOutlet weak var resultsTableView: UITableView!
+    @IBOutlet private weak var searchTableView: UITableView!
+    @IBOutlet private weak var resultsTableView: UITableView!
     
     private var placesClient: GMSPlacesClient!
     private var searchResults = [SearchResult]()

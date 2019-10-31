@@ -24,7 +24,7 @@ class DirectionButton: UIButton {
     
     
     
-    func setUpButton() {
+    private func setUpButton() {
         self.backgroundColor = .white
         self.layer.cornerRadius = 12
         self.setTitle("   Où allez-vous ?", for: .normal)
