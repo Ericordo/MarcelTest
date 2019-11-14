@@ -30,11 +30,11 @@ class HomeViewController: UIViewController {
         setUpMap()
         setUpUI()
         
-        NetworkService.shared.getFavoritesData { result in
+        NetworkService.shared.getFavoritesData { [weak self] result in
             switch result {
             case .success(let favorites):
-                self.favorites = favorites.reversed()
-                self.favoritesTableView.reloadData()
+                self?.favorites = favorites.reversed()
+                self?.favoritesTableView.reloadData()
             case .failure(let error):
                 print("Favorites Error", error.localizedDescription)
             }

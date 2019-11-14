@@ -26,11 +26,11 @@ class DriveViewController: UIViewController {
         setUpMap()
         setUpUI()
         
-        NetworkService.shared.getProposalsData { result in
+        NetworkService.shared.getProposalsData { [weak self] result in
             switch result {
             case .success(let proposals):
-                self.proposals = proposals
-                self.proposalsCollectionView.reloadData()
+                self?.proposals = proposals
+                self?.proposalsCollectionView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
