@@ -15,7 +15,7 @@ class NetworkService {
     
     static let shared = NetworkService()
     
-    func getFavoritesData(completion: @escaping (_ favorites: [Favorite]) -> Void) {
+    func getFavoritesData(completion: @escaping (Result<[Favorite], Error>) -> Void) {
         var favorites : [Favorite] = []
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: OperationQueue.main)
         let endpoint = "https://api.myjson.com/bins/fztyg"
@@ -48,16 +48,16 @@ class NetworkService {
                     favorites.append(newFavorite)
                 })
                 DispatchQueue.main.async {
-                    completion(favorites)
+                    completion(.success(favorites))
                 }
             } catch let error {
-                print("JSON decoding failed", error)
+                completion(.failure(error))
             }
         }
         dataTask.resume()
     }
     
-    func getProposalsData(completion: @escaping (_ proposals: [Proposal]) -> Void) {
+    func getProposalsData(completion: @escaping (Result<[Proposal], Error>) -> Void) {
           var proposals : [Proposal] = []
           let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: OperationQueue.main)
           let endpoint = "https://api.myjson.com/bins/1bjt0o"
@@ -89,10 +89,10 @@ class NetworkService {
                     proposals.append(newProposal)
                 }
                   DispatchQueue.main.async {
-                      completion(proposals)
+                    completion(.success(proposals))
                   }
               } catch let error {
-                  print("JSON decoding failed", error)
+                  completion(.failure(error))
               }
           }
           dataTask.resume()
