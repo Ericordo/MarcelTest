@@ -65,22 +65,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let searchCell = searchTableView.dequeueReusableCell(withIdentifier: Identifiers.searchCellIdentifier, for: indexPath) as! SearchTableViewCell
         let resultCell = resultsTableView.dequeueReusableCell(withIdentifier: Identifiers.resultCellIdentifier, for: indexPath) as! ResultTableViewCell
         
-        searchCell.textField.delegate = self
-        
         if tableView == searchTableView {
             switch indexPath.row {
             case 0:
                 return userCell
             case 1:
+                searchCell.configure(with: self)
                 return searchCell
             default:
                 return userCell
             }
         } else {
-            if searchResults.count > 0 {
-                resultCell.addressLabel.attributedText = searchResults[indexPath.row].address
-                resultCell.cityLabel.attributedText = searchResults[indexPath.row].city
-            }
+            resultCell.configure(with: searchResults[indexPath.row])
         }
         return resultCell
     }

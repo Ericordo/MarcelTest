@@ -20,6 +20,13 @@ class ProposalCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setUpCell()
     }
+
+    func configure(with proposal: Proposal) {
+
+        rangeLabel.text = proposal.range?.capitalizingFirstLetter()
+        priceLabel.text = String(proposal.price ?? 0) + " €"
+        leafImageView.image = proposal.range == "eco" ? UIImage(named: "Leaf") : nil
+    }
     
     private func setUpCell() {
         imgBackgroundView.layer.cornerRadius = imgBackgroundView.frame.width/2

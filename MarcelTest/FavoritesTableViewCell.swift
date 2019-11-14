@@ -19,7 +19,15 @@ class FavoritesTableViewCell: UITableViewCell {
         setUpCell()
     }
     
-   private func setUpCell() {
+    private func setUpCell() {
         self.backgroundColor = Colors.favoriteCellColor
+    }
+
+    func configure(with favorite: Favorite) {
+        favoriteLabel.text = favorite.type?.capitalizingFirstLetter()
+        addressLabel.text = favorite.address
+        if let type = favorite.type {
+            iconImageView.image = UIImage(named: type)
+        }
     }
 }

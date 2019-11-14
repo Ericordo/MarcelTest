@@ -16,6 +16,10 @@ class SearchTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setUpCell()
     }
+
+    func configure(with delegate: UITextFieldDelegate?) {
+        textField.delegate = delegate
+    }
     
     private func setUpCell() {
         self.selectionStyle = .none

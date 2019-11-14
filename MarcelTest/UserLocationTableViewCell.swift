@@ -17,7 +17,19 @@ class UserLocationTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setUpCell()
     }
-    
+
+    func configureForDeparture() {
+        infoImage.image = UIImage(named: "Marker")
+        infoImage.image = infoImage.image?.withRenderingMode(.alwaysTemplate)
+        infoImage.tintColor = Colors.turquoise
+    }
+
+    func configureForDestination(with address: String?) {
+        infoImage.image = UIImage(named: "Marker")
+        infoLabel.textColor = .black
+        infoLabel.text = address
+    }
+
     private func setUpCell() {
         self.selectionStyle = .none
         self.infoLabel.textColor = Colors.turquoise

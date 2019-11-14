@@ -19,7 +19,7 @@ class DriveViewController: UIViewController {
     
     private var currentLocation : CLLocation?
     private var selectedLocation : Location?
-    private var proposals : [Proposal]?
+    private var proposals : [Proposal] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,11 @@ class DriveViewController: UIViewController {
             self.proposals = proposals
             self.proposalsCollectionView.reloadData()
         }
+    }
+
+    func configure(currentLocation: CLLocation?, selectedLocation: Location?) {
+        self.currentLocation = currentLocation
+        self.selectedLocation = selectedLocation
     }
     
     private func setUpMap() {
@@ -92,13 +97,9 @@ extension DriveViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            cell.infoImage.image = UIImage(named: "Marker")
-            cell.infoImage.image = cell.infoImage.image!.withRenderingMode(.alwaysTemplate)
-            cell.infoImage.tintColor = Colors.turquoise
+            cell.configureForDeparture()
         case 1:
-            cell.infoImage.image = UIImage(named: "Marker")
-            cell.infoLabel.textColor = .black
-            cell.infoLabel.text = selectedLocation?.address
+            cell.configureForDestination(with: selectedLocation?.address)
         default:
             break
         }
@@ -109,25 +110,17 @@ extension DriveViewController: UITableViewDelegate, UITableViewDataSource {
 extension DriveViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return proposals.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = proposalsCollectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.proposalCellIdentifier, for: indexPath) as! ProposalCollectionViewCell
-        
-        let range = proposals?[indexPath.row].range
-        cell.rangeLabel.text = range?.capitalizingFirstLetter()
-        let price = Int(proposals?[indexPath.row].price ?? 0)
-        cell.priceLabel.text = String(price) + " €"
-     
-        if range == "eco" {
-            cell.leafImageView.image = UIImage(named: "Leaf")
-        }
+        cell.configure(with: proposals[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let waitingTime = proposals![indexPath.row].waitingTime else { return }
+        guard let waitingTime = proposals[indexPath.row].waitingTime else { return }
         waitingTimeLabel.text = "    Temps d'attente estimé à " + String(waitingTime) + " minutes."
     }
 }

@@ -80,8 +80,10 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Identifiers.toDrive {
             let destinationVC = segue.destination as! DriveViewController
-            destinationVC.currentLocation = currentLocation
-            destinationVC.selectedLocation = selectedLocation
+            destinationVC.configure(
+                currentLocation: currentLocation,
+                selectedLocation: selectedLocation
+            )
         }
     }
 }
@@ -131,13 +133,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let favorite = favorites[indexPath.row]
         let cell = favoritesTableView.dequeueReusableCell(withIdentifier: Identifiers.favoriteCellIdentifier, for: indexPath) as! FavoritesTableViewCell
-        
-        cell.favoriteLabel.text = favorites[indexPath.row].type?.capitalizingFirstLetter() ?? ""
-        cell.addressLabel.text = favorites[indexPath.row].address ?? ""
-        if let type = favorites[indexPath.row].type {
-            cell.iconImageView.image = UIImage(named: type)
-        }
+        cell.configure(with: favorite)
         return cell
     }
     
@@ -150,5 +148,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         selectedLocation = Location(address: address, location: CLLocation(latitude: latitude, longitude: longitude))
         
         performSegue(withIdentifier: Identifiers.toDrive, sender: self)
-    }   
+    }
 }

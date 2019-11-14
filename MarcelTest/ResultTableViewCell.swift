@@ -21,4 +21,9 @@ class ResultTableViewCell: UITableViewCell {
     private func setUpCell() {
         self.backgroundColor = Colors.resultsTVColor
     }
+
+    func configure(with result: SearchResult) {
+        addressLabel.attributedText = result.address
+        cityLabel.attributedText = result.city
+    }
 }
