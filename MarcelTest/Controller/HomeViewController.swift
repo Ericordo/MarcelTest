@@ -33,8 +33,7 @@ class HomeViewController: UIViewController {
         NetworkService.shared.getFavoritesData { [weak self] result in
             switch result {
             case .success(let favorites):
-                self?.favorites = favorites.reversed()
-                self?.favoritesTableView.reloadData()
+                self?.handleFavorites(favorites)
             case .failure(let error):
                 print("Favorites Error", error.localizedDescription)
             }
@@ -90,6 +89,12 @@ class HomeViewController: UIViewController {
                 selectedLocation: selectedLocation
             )
         }
+    }
+
+    private func handleFavorites(_ favorites: [Favorite]) {
+        self.favorites = favorites
+        favoritesTableView.reloadData()
+
     }
 }
 
